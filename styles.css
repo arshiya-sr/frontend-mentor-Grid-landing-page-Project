@@ -1,0 +1,118 @@
+/* custom properties */
+
+:root {
+    /* Colors */
+
+    --White: hsl(0, 0%, 100%);
+
+    --Blue-200: hsl(224, 100%, 95%);
+    --Blue-400: hsl(220, 100%, 64%);
+    --Blue-600: hsl(228, 100%, 60%);
+    --Blue-700: hsl(228, 99%, 58%);
+
+    --Black: hsl(0, 0%, 0%);
+
+    /* used at 25% opacity for the menu overlay */
+}
+
+/* overall styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--Blue-400);
+    color: var(--White);
+    position: relative;
+}
+
+/* header */
+
+.header {
+    display: flex;
+    padding: 25px 22px;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--Blue-700);
+    position: relative;
+}
+
+.title {
+    font-size: 0.9em;
+    font-weight: 400;
+}
+
+.title::before {
+    content: "• ";
+    width: 17px;
+    height: 17px;
+}
+
+.menu-checkbox {
+    z-index: 10;
+    position: absolute;
+    top: 24px;
+    right: 22px;
+    width: 20px;
+    height: 20px;
+    appearance: none;
+    background-image: url(./assets/images/icon-menu.svg);
+    cursor: pointer;
+}
+
+.menu,
+.navigation {
+    display: none;
+}
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 80px;
+    text-align: center;
+    justify-content: center;
+    line-height: 3em;
+}
+
+.navigation .link {
+    display: block;
+    font-size: 1.8em;
+    text-decoration: none;
+    color: var(--White)
+}
+
+.menu-checkbox:checked~.menu,
+.menu-checkbox:checked~.menu .navigation {
+    display: block;
+}
+
+.menu-checkbox:checked {
+    background-image: url(./assets/images/icon-close.svg)
+}
+
+.menu-checkbox:checked~.main-section,
+.menu-checkbox:checked~.footer {
+    background-color: var(--Black);
+    opacity: 0.25;
+}
+
+
+.menu-checkbox:checked~.main-section .introduction {
+    display: none;
+}
+
+.footer {
+    font-size: 11px;
+    text-align: center;
+}
+
+.footer a {
+    color: hsl(228, 45%, 44%);
+}
