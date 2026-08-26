@@ -191,8 +191,10 @@ body {
     display: flex;
     flex-direction: column;
     gap: 8px;
+    color: var(--Blue-200)
 }
 
 .footer a {
-    color: hsl(228, 45%, 44%);
+    color: hsl(59, 100%, 50%);
+    text-decoration: none;
 }
