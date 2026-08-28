@@ -148,7 +148,7 @@ body {
     border-top: 1px solid var(--Blue-400);
     border-bottom: 1px solid var(--Blue-400);
     padding: 20px 32px;
-    height: auto;
+    height: 350px;
     width: 100%;
 }
 
@@ -235,6 +235,8 @@ body {
 /* desktop layout */
 
 @media screen and (min-width: 938px) {
+    /* body desk */
+
     body {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
@@ -245,9 +247,13 @@ body {
             'footer footer footer';
     }
 
+    /* header desk */
+
     .header {
         grid-area: header;
     }
+
+    /* main desk */
 
     .main-section {
         grid-area: main;
@@ -283,6 +289,7 @@ body {
 
     .stat-section {
         border: 1px solid var(--Blue-400);
+        height: auto;
     }
 
     .main-section .stat-section:nth-child(2) {
@@ -316,7 +323,7 @@ body {
         justify-content: space-between;
     }
 
-    /* menu */
+    /* menu desk */
 
     body:has(.menu-checkbox:checked) {
         grid-template-columns: 1fr 1fr 1fr 1.15fr;
