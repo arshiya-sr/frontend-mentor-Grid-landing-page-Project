@@ -1,6 +1,7 @@
 /* custom properties */
 
 :root {
+
     /* Colors */
 
     --White: hsl(0, 0%, 100%);
@@ -12,10 +13,11 @@
 
     --Black: hsl(0, 0%, 0%);
 
-    /* used at 25% opacity for the menu overlay */
+    --footer-link: hsl(59, 100%, 50%);
 }
 
 /* overall styles */
+
 * {
     margin: 0;
     padding: 0;
@@ -68,7 +70,8 @@ body {
 }
 
 .menu,
-.navigation {
+.navigation,
+.hidden {
     display: none;
 }
 
@@ -176,8 +179,6 @@ body {
 }
 
 .arrow {
-    rotate: 0;
-    translate: 0;
     transition: translate 0.6s linear, rotate 0.4s ease-in 0.2s;
 }
 
@@ -228,13 +229,15 @@ body {
 }
 
 .footer a {
-    color: hsl(59, 100%, 50%);
+    color: var(--footer-link);
     text-decoration: none;
 }
 
 /* desktop layout */
 
-@media screen and (min-width: 938px) {
+@media screen and (min-width: 58.625rem) {
+    /* equal to 938px */
+
     /* body desk */
 
     body {
